@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -30,7 +31,8 @@ public class login extends AppCompatActivity {
 
 
         Button button ;
-        EditText email,password,signup;
+        EditText email,password;
+        TextView signup;
 
         FirebaseAuth auth;
         String emalPatter = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -44,7 +46,14 @@ public class login extends AppCompatActivity {
 
 
 
-
+signup.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(login.this,registration.class);
+        startActivity(intent);
+        finish();
+    }
+});
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

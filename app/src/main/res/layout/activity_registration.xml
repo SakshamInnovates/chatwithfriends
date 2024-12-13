@@ -169,7 +169,7 @@
         app:layout_constraintVertical_bias="0.843" />
 
     <TextView
-        android:id="@+id/rg_loginbtn"
+        android:id="@+id/loginbtn"
         android:layout_width="125dp"
         android:layout_height="62dp"
         android:gravity="center"

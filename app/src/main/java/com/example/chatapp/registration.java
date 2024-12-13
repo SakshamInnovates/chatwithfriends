@@ -36,7 +36,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class registration extends AppCompatActivity {
 
 
-    TextView rg_loginbtn;
+    TextView loginbtn;
     EditText rg_name, rg_email, rg_Password, rg_RePassword;
     Button rg_btn;
     CircleImageView rg_image;
@@ -57,7 +57,7 @@ public class registration extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
 
-        rg_loginbtn = findViewById(R.id.rg_loginbtn);
+loginbtn = findViewById(R.id.loginbtn);
         rg_name = findViewById(R.id.rg_name);
         rg_email = findViewById(R.id.rg_email);
         rg_Password = findViewById(R.id.rg_Password);
@@ -66,7 +66,14 @@ public class registration extends AppCompatActivity {
         rg_image = findViewById(R.id.rg_image);
 
 
-
+loginbtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(registration.this,login.class);
+        startActivity(intent);
+        finish();
+    }
+});
 
         rg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
