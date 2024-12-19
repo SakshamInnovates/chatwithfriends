@@ -35,7 +35,7 @@ public class login extends AppCompatActivity {
         TextView signup;
 
         FirebaseAuth auth;
-        String emalPatter = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        String emalPatter = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[a-zA-Z]{2,}";
 
 
         auth = FirebaseAuth.getInstance();
@@ -43,7 +43,6 @@ public class login extends AppCompatActivity {
         button = findViewById(R.id.buttonlog);
         email = findViewById(R.id.editTextTextEmailAddress);
         password = findViewById(R.id.editTextTextPassword);
-
 
 
 signup.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +65,7 @@ signup.setOnClickListener(new View.OnClickListener() {
                 } else if (TextUtils.isEmpty(Password)) {
                     
                     Toast.makeText(login.this,"password is required", Toast.LENGTH_SHORT).show();
-                } else if (Email.matches(emalPatter)) {
+                } else if (!Email.matches(emalPatter)) {
                     email.setError("Invalid Email");
 
                 } else if (Password.length() < 6) {
@@ -74,7 +73,7 @@ signup.setOnClickListener(new View.OnClickListener() {
                     Toast.makeText(login.this,"Password must be more than  6 characters", Toast.LENGTH_SHORT).show();
                 } else{
 
-                    auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 

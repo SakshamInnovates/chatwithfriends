@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ChatApp"
         tools:targetApi="31">
         <activity
+            android:name=".settings"
+            android:exported="false" />
+        <activity
+            android:name=".chat_windo"
+            android:exported="false" />
+        <activity
             android:name=".registration"
             android:exported="false" />
         <activity

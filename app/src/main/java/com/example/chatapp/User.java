@@ -1,18 +1,17 @@
 package com.example.chatapp;
 
 public class User {
-    String profilepic,username,password,mail,userId,lastmessage,status;
+    String profilepic,mail,userName,password,userId,lastMessage,status;
 
 
-    public User(String id, String name, String email, String password, String rePassword, String imageuri, String status) {
 
-        this.userId = id;
-        this.username = name;
-        this.mail = email;
+    public User(String userId, String userName, String maill, String password, String profilepic, String status) {
+        this.userId = userId;
+        this.userName = userName;
+        this.mail = maill;
         this.password = password;
-        this.profilepic = imageuri;
+        this.profilepic = profilepic;
         this.status = status;
-
     }
 
     public String getProfilepic() {
@@ -23,12 +22,20 @@ public class User {
         this.profilepic = profilepic;
     }
 
-    public String getUsername() {
-        return username;
+    public String getMail() {
+        return mail;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -39,14 +46,6 @@ public class User {
         this.password = password;
     }
 
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
     public String getUserId() {
         return userId;
     }
@@ -55,12 +54,12 @@ public class User {
         this.userId = userId;
     }
 
-    public String getLastmessage() {
-        return lastmessage;
+    public String getLastMessage() {
+        return lastMessage;
     }
 
-    public void setLastmessage(String lastmessage) {
-        this.lastmessage = lastmessage;
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
     }
 
     public String getStatus() {
@@ -71,5 +70,3 @@ public class User {
         this.status = status;
     }
 }
-
-

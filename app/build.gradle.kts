@@ -1,11 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.google.firebase.crashlytics)
+
+
 }
 
 android {
     namespace = "com.example.chatapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.chatapp"
@@ -33,17 +36,21 @@ android {
 }
 
 dependencies {
-
+    implementation (libs.squareup.picasso)
+    implementation(libs.firebase.database)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
-    implementation ("com.intuit.sdp:sdp-android:1.1.1")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation (libs.sdp.android)
+    implementation (libs.circleimageview)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.storage)
+    implementation(libs.firebase.crashlytics)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 }
